@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NoticiasService } from 'src/app/services/noticias.service';
+import { Noticia } from 'src/app/models/noticia.model';
 
 @Component({
   selector: 'app-noticia-detalle',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./noticia-detalle.component.css']
 })
 export class NoticiaDetalleComponent implements OnInit {
+  noticia?: Noticia;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private noticiasService: NoticiasService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.noticiasService.getNoticia(id).subscribe(n => {
+      if (!n) this.router.navigate(['/']);
+      this.noticia = n;
+    });
+  }
+  volverAlListado() {
+    this.router.navigate(['/']);
   }
 
 }

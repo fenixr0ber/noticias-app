@@ -3,6 +3,8 @@ export interface Noticia {
   titulo: string;
   resumen: string;
   contenido: string;
-  fecha: Date;
   autor: string;
+  fecha: Date;
+  imagen?: string;
 }
+

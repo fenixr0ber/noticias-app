@@ -1,1 +1,19 @@
-<p>noticia-detalle works!</p>
+<div class="container" *ngIf="noticia">
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="volverAlListado()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span>{{ noticia.titulo }}</span>
+    </mat-toolbar>
+
+    <mat-card>
+        <mat-card-title>{{ noticia.titulo }}</mat-card-title>
+        <img [src]="noticia.imagen" alt="Imagen" style="width: 100%; max-height: 300px; object-fit: cover; margin-bottom: 16px;" />
+        <mat-card-subtitle>
+            {{ noticia.fecha | date: 'dd/MM/yyyy' }} - {{ noticia.autor }}
+        </mat-card-subtitle>
+        <mat-card-content>
+            <p>{{ noticia.contenido }}</p>
+        </mat-card-content>
+    </mat-card>
+</div>
