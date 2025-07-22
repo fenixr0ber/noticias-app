@@ -1,148 +1,147 @@
 .carrusel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .carrusel-horizontal {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 16px 0;
-  scroll-behavior: smooth;
-  flex: 1;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 16px 0;
+    scroll-behavior: smooth;
+    flex: 1;
 }
 
 .carrusel-horizontal::-webkit-scrollbar {
-  height: 8px;
+    height: 8px;
 }
+
 .carrusel-horizontal::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
+    background: #ccc;
+    border-radius: 4px;
 }
 
 .noticia-carrusel {
-  min-width: 200px;
-  max-width: 220px;
-  flex-shrink: 0;
-  cursor: pointer;
+    min-width: 200px;
+    max-width: 220px;
+    flex-shrink: 0;
+    cursor: pointer;
 }
 
 .noticia-carrusel img {
-  height: 120px;
-  object-fit: cover;
+    height: 120px;
+    object-fit: cover;
 }
 
 .arrow {
-  background: rgba(0, 0, 0, 0.4);
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  z-index: 5;
-  margin: 0 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    z-index: 5;
+    margin: 0 8px;
 }
 
 .arrow:hover {
-  background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .arrow.left {
-  position: absolute;
-  left: 0;
+    position: absolute;
+    left: 0;
 }
 
 .arrow.right {
-  position: absolute;
-  right: 0;
+    position: absolute;
+    right: 0;
 }
 
 .listado-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px 32px;
-  margin-top: 24px;
-  box-sizing: border-box;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px 32px;
+    margin-top: 24px;
+    box-sizing: border-box;
 }
 
 .destacada-con-resumen {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
 }
 
 .noticia-destacada {
-  flex: 2;
-  position: relative;
-  cursor: pointer;
+    flex: 2;
+    position: relative;
+    cursor: pointer;
 }
 
 .noticia-destacada img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 8px;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .noticia-destacada .contenido {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 16px;
-  border-radius: 4px;
-  max-width: 70%;
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+    max-width: 70%;
 }
 
 .noticias-laterales {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .noticias-laterales h4 {
-  margin: 0 0 8px 0;
-  font-size: 18px;
-  color: #444;
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: #444;
 }
 
 .item-noticia-lateral {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  cursor: pointer;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
 }
 
 .item-noticia-lateral img {
-  width: 80px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 4px;
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 .item-noticia-lateral .texto h5 {
-  font-size: 14px;
-  margin: 0 0 4px 0;
+    font-size: 14px;
+    margin: 0 0 4px 0;
 }
 
 .item-noticia-lateral .texto p {
-  font-size: 12px;
-  color: gray;
-  margin: 0;
+    font-size: 12px;
+    color: gray;
+    margin: 0;
 }
 
 .spinner-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 64px);
-  width: 100%;
-  padding: 32px 0;
-  box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 64px);
+    width: 100%;
+    padding: 32px 0;
+    box-sizing: border-box;
 }
-
-

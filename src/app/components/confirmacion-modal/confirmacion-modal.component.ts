@@ -12,7 +12,7 @@ export class ConfirmacionModalComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ConfirmacionModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { mensaje: string, soloInformativo?: boolean }
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.soloInformativo = !!this.data.soloInformativo;

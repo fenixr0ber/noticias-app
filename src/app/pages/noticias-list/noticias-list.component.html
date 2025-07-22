@@ -1,4 +1,3 @@
-
 <mat-toolbar color="warn" class="custom-toolbar">
     <span>Noticias</span>
     <span class="spacer"></span>
@@ -9,56 +8,49 @@
 </mat-toolbar>
 
 <div class="listado-container">
-  <div *ngIf="cargando" class="spinner-container">
-    <mat-spinner></mat-spinner>
-  </div>
-
-  <div class="destacada-con-resumen" *ngIf="noticias.length > 1">
-  <!-- Noticia destacada -->
-  <div class="noticia-destacada" (click)="verDetalle(noticias[0])">
-    <img [src]="noticias[0].imagen" alt="Noticia destacada" />
-    <div class="contenido">
-      <h2>{{ noticias[0].titulo }}</h2>
-      <p>{{ noticias[0].resumen }}</p>
+    <div *ngIf="cargando" class="spinner-container">
+        <mat-spinner></mat-spinner>
     </div>
-  </div>
 
-  <div class="noticias-laterales">
-    <h4>Más noticias</h4>
-    <div
-      class="item-noticia-lateral"
-      *ngFor="let noticia of noticias.slice(1, 5)"
-      (click)="verDetalle(noticia)"
-    >
-      <img [src]="noticia.imagen" alt="mini" />
-      <div class="texto">
-        <h5>{{ noticia.titulo }}</h5>
-        <p>{{ noticia.fecha | date:'shortDate' }}</p>
-      </div>
+    <div class="destacada-con-resumen" *ngIf="noticias.length > 1">
+
+        <div class="noticia-destacada" (click)="verDetalle(noticias[0])">
+            <img [src]="noticias[0].imagen" alt="Noticia destacada" />
+            <div class="contenido">
+                <h2>{{ noticias[0].titulo }}</h2>
+                <p>{{ noticias[0].resumen }}</p>
+            </div>
+        </div>
+
+        <div class="noticias-laterales">
+            <h4>Más noticias</h4>
+            <div class="item-noticia-lateral" *ngFor="let noticia of noticias.slice(1, 5)"
+                (click)="verDetalle(noticia)">
+                <img [src]="noticia.imagen" alt="mini" />
+                <div class="texto">
+                    <h5>{{ noticia.titulo }}</h5>
+                    <p>{{ noticia.fecha | date:'shortDate' }}</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
-  <div class="carrusel-wrapper" *ngIf="noticias.length > 1">
-  <button class="arrow left" (click)="scrollCarrusel('left')">
-    <mat-icon>chevron_left</mat-icon>
-  </button>
+    <div class="carrusel-wrapper" *ngIf="noticias.length > 1">
+        <button class="arrow left" (click)="scrollCarrusel('left')">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
 
-  <div class="carrusel-horizontal" #carrusel>
-    <mat-card
-      class="noticia-carrusel"
-      *ngFor="let noticia of noticias.slice(1)"
-      (click)="verDetalle(noticia)"
-    >
-      <img mat-card-image [src]="noticia.imagen" alt="Imagen noticia" />
-      <mat-card-title>{{ noticia.titulo }}</mat-card-title>
-      <mat-card-subtitle>{{ noticia.fecha | date:'dd/MM/yyyy' }}</mat-card-subtitle>
-    </mat-card>
-  </div>
+        <div class="carrusel-horizontal" #carrusel>
+            <mat-card class="noticia-carrusel" *ngFor="let noticia of noticias.slice(1)" (click)="verDetalle(noticia)">
+                <img mat-card-image [src]="noticia.imagen" alt="Imagen noticia" />
+                <mat-card-title>{{ noticia.titulo }}</mat-card-title>
+                <mat-card-subtitle>{{ noticia.fecha | date:'dd/MM/yyyy' }}</mat-card-subtitle>
+            </mat-card>
+        </div>
 
-  <button class="arrow right" (click)="scrollCarrusel('right')">
-    <mat-icon>chevron_right</mat-icon>
-  </button>
-</div>
+        <button class="arrow right" (click)="scrollCarrusel('right')">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
 </div>

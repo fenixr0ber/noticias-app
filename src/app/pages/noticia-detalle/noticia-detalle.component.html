@@ -1,33 +1,30 @@
 <div class="container" *ngIf="noticia">
-  <mat-toolbar color="warn">
-  <button mat-icon-button (click)="volverAlListado()">
-    <mat-icon>arrow_back</mat-icon>
-  </button>
+    <mat-toolbar color="warn">
+        <button mat-icon-button (click)="volverAlListado()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
 
-  <span style="margin-left: 8px;">{{ noticia.titulo }}</span>
-  <span class="spacer"></span>
+        <span style="margin-left: 8px;">{{ noticia.titulo }}</span>
+        <span class="spacer"></span>
 
-  <button mat-stroked-button color="warn" (click)="editarNoticia()">
-    Editar Noticia
-  </button>
+        <button mat-stroked-button color="warn" (click)="editarNoticia()">
+            Editar Noticia
+        </button>
 
-  <button mat-stroked-button color="warn" (click)="eliminarNoticia()" style="margin-left: 8px;">
-    Eliminar Noticia
-  </button>
-</mat-toolbar>
+        <button mat-stroked-button color="warn" (click)="eliminarNoticia()" style="margin-left: 8px;">
+            Eliminar Noticia
+        </button>
+    </mat-toolbar>
 
-  <mat-card>
-    <mat-card-title>{{ noticia.titulo }}</mat-card-title>
-    <img
-      [src]="noticia.imagen"
-      alt="Imagen"
-      style="width: 100%; max-height: 300px; object-fit: cover; margin-bottom: 16px;"
-    />
-    <mat-card-subtitle>
-      {{ noticia.fecha | date: 'dd/MM/yyyy' }} - {{ noticia.autor }}
-    </mat-card-subtitle>
-    <mat-card-content>
-      <p>{{ noticia.contenido }}</p>
-    </mat-card-content>
-  </mat-card>
+    <mat-card>
+        <mat-card-title>{{ noticia.titulo }}</mat-card-title>
+        <img [src]="noticia.imagen" alt="Imagen"
+            style="width: 100%; max-height: 300px; object-fit: cover; margin-bottom: 16px;" />
+        <mat-card-subtitle>
+            {{ noticia.fecha | date: 'dd/MM/yyyy' }} - {{ noticia.autor }}
+        </mat-card-subtitle>
+        <mat-card-content>
+            <p>{{ noticia.contenido }}</p>
+        </mat-card-content>
+    </mat-card>
 </div>

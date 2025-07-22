@@ -109,14 +109,14 @@ export class NoticiasService {
   }
 
   mostrarConfirmacion(mensaje: string) {
-  this.dialog.open(ConfirmacionModalComponent, {
-    width: '400px',
-    data: {
-      mensaje: mensaje,
-      soloInformativo: true
-    }
-  });
-}
+    this.dialog.open(ConfirmacionModalComponent, {
+      width: '400px',
+      data: {
+        mensaje: mensaje,
+        soloInformativo: true
+      }
+    });
+  }
 
   constructor(private dialog: MatDialog) { }
 
@@ -149,9 +149,18 @@ export class NoticiasService {
       if (confirmado) {
         this.eliminarNoticia(noticia.id);
         if (callback) callback();
+
+        this.dialog.open(ConfirmacionModalComponent, {
+          width: '400px',
+          data: {
+            mensaje: 'La noticia se eliminó correctamente.',
+            soloInformativo: true
+          }
+        });
       }
     });
   }
+
 
 }
 

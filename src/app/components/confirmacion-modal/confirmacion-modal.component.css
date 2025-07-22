@@ -1,17 +1,15 @@
 mat-dialog-content {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4px;
 }
 
 .close-btn {
-  align-self: start;
-  color: red;
+    align-self: start;
+    color: red;
 }
-
-

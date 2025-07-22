@@ -101,14 +101,14 @@ export class NoticiasListComponent implements OnInit {
   }
 
   scrollCarrusel(direccion: 'left' | 'right') {
-  const scrollAmount = 300;
-  if (this.carrusel) {
-    const elemento = this.carrusel.nativeElement;
-    if (direccion === 'left') {
-      elemento.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    } else {
-      elemento.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    const scrollAmount = 300;
+    if (this.carrusel) {
+      const elemento = this.carrusel.nativeElement;
+      if (direccion === 'left') {
+        elemento.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        elemento.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
     }
   }
-}
 }

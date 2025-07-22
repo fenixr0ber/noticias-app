@@ -15,7 +15,7 @@ export class NoticiaDetalleComponent implements OnInit {
     private route: ActivatedRoute,
     private noticiasService: NoticiasService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -30,16 +30,16 @@ export class NoticiaDetalleComponent implements OnInit {
   }
 
   editarNoticia() {
-  if (this.noticia) {
-    const dialogRef = this.noticiasService.abrirModalEdicion(this.noticia);
+    if (this.noticia) {
+      const dialogRef = this.noticiasService.abrirModalEdicion(this.noticia);
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.noticia = { ...result };
-      }
-    });
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.noticia = { ...result };
+        }
+      });
+    }
   }
-}
 
 
   eliminarNoticia() {
