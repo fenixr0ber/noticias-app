@@ -15,7 +15,7 @@ export class NoticiaDetalleComponent implements OnInit {
     private route: ActivatedRoute,
     private noticiasService: NoticiasService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -24,8 +24,29 @@ export class NoticiaDetalleComponent implements OnInit {
       this.noticia = n;
     });
   }
+
   volverAlListado() {
     this.router.navigate(['/']);
   }
 
+  editarNoticia() {
+  if (this.noticia) {
+    const dialogRef = this.noticiasService.abrirModalEdicion(this.noticia);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.noticia = { ...result };
+      }
+    });
+  }
+}
+
+
+  eliminarNoticia() {
+    if (this.noticia) {
+      this.noticiasService.abrirModalEliminacion(this.noticia, () => {
+        this.router.navigate(['/']);
+      });
+    }
+  }
 }

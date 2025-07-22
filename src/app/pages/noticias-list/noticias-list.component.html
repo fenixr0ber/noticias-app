@@ -13,13 +13,32 @@
     <mat-spinner></mat-spinner>
   </div>
 
-  <div class="noticia-destacada" *ngIf="noticias.length > 0" (click)="verDetalle(noticias[0])">
+  <div class="destacada-con-resumen" *ngIf="noticias.length > 1">
+  <!-- Noticia destacada -->
+  <div class="noticia-destacada" (click)="verDetalle(noticias[0])">
     <img [src]="noticias[0].imagen" alt="Noticia destacada" />
     <div class="contenido">
       <h2>{{ noticias[0].titulo }}</h2>
       <p>{{ noticias[0].resumen }}</p>
     </div>
   </div>
+
+  <div class="noticias-laterales">
+    <h4>Más noticias</h4>
+    <div
+      class="item-noticia-lateral"
+      *ngFor="let noticia of noticias.slice(1, 5)"
+      (click)="verDetalle(noticia)"
+    >
+      <img [src]="noticia.imagen" alt="mini" />
+      <div class="texto">
+        <h5>{{ noticia.titulo }}</h5>
+        <p>{{ noticia.fecha | date:'shortDate' }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <div class="carrusel-wrapper" *ngIf="noticias.length > 1">
   <button class="arrow left" (click)="scrollCarrusel('left')">

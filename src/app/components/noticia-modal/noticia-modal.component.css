@@ -8,3 +8,11 @@
   justify-content: flex-end;
   gap: 10px;
 }
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
