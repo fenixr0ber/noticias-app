@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NoticiasService } from 'src/app/services/noticias.service';
 import { Noticia } from 'src/app/models/noticia.model';
@@ -8,8 +8,9 @@ import { Noticia } from 'src/app/models/noticia.model';
   templateUrl: './noticia-detalle.component.html',
   styleUrls: ['./noticia-detalle.component.css']
 })
-export class NoticiaDetalleComponent implements OnInit {
+export class NoticiaDetalleComponent implements OnInit, OnDestroy {
   noticia?: Noticia;
+  esPantallaChica: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +24,18 @@ export class NoticiaDetalleComponent implements OnInit {
       if (!n) this.router.navigate(['/']);
       this.noticia = n;
     });
+
+    this.verificarTamanioPantalla();
+    window.addEventListener('resize', this.verificarTamanioPantalla);
   }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('resize', this.verificarTamanioPantalla);
+  }
+
+  verificarTamanioPantalla = () => {
+    this.esPantallaChica = window.innerWidth <= 480;
+  };
 
   volverAlListado() {
     this.router.navigate(['/']);
@@ -40,7 +52,6 @@ export class NoticiaDetalleComponent implements OnInit {
       });
     }
   }
-
 
   eliminarNoticia() {
     if (this.noticia) {
